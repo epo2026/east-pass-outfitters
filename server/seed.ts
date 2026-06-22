@@ -13,7 +13,7 @@ const IMG = {
 const APPAREL_SIZES = JSON.stringify(["S", "M", "L", "XL", "2XL", "3XL"]);
 
 export const seedProducts: InsertProduct[] = [
-  // ---------------- CUSTOM APPAREL ----------------
+  // ---------------- APPAREL ----------------
   {
     slug: "east-pass-performance-ls-shirt",
     name: "East Pass UPF 50 Performance Long-Sleeve",
@@ -22,13 +22,13 @@ export const seedProducts: InsertProduct[] = [
     brand: "East Pass Outfitters",
     price: 42,
     compareAtPrice: 52,
-    shortDescription: "Moisture-wicking UPF 50+ sun shirt, custom-printed in-house.",
+    shortDescription: "Our flagship moisture-wicking UPF 50+ sun shirt.",
     description:
-      "Our flagship sun shirt. Lightweight 4-way-stretch performance knit with UPF 50+ sun protection, a quick-dry finish, and flatlock seams that won't chafe on long days on the water. Custom-printed and embroidered right here on the Emerald Coast \u2014 add your boat name or a tournament logo at checkout.",
+      "Our flagship sun shirt. Lightweight 4-way-stretch performance knit with UPF 50+ sun protection, a quick-dry finish, and flatlock seams that won't chafe on long days on the water. Designed on the Emerald Coast with original East Pass artwork.",
     image: "/img/prod-ls-shirt.png",
     sizes: APPAREL_SIZES,
     colors: JSON.stringify(["Seafoam", "Gulf White", "Deep Navy", "Sand"]),
-    tags: JSON.stringify(["UPF 50+", "Performance", "Custom"]),
+    tags: JSON.stringify(["UPF 50+", "Performance", "Original Design"]),
     rating: 4.9,
     reviewCount: 214,
     inStock: true,
@@ -49,7 +49,7 @@ export const seedProducts: InsertProduct[] = [
     image: "/img/prod-tee.png",
     sizes: APPAREL_SIZES,
     colors: JSON.stringify(["Heather Teal", "Faded Sand", "Charcoal"]),
-    tags: JSON.stringify(["Tri-Blend", "Everyday", "Custom"]),
+    tags: JSON.stringify(["Tri-Blend", "Everyday", "Original Design"]),
     rating: 4.7,
     reviewCount: 132,
     inStock: true,
@@ -64,13 +64,13 @@ export const seedProducts: InsertProduct[] = [
     apparelCategory: "hats",
     brand: "East Pass Outfitters",
     price: 30,
-    shortDescription: "Mid-profile mesh-back trucker with custom embroidery.",
+    shortDescription: "Mid-profile mesh-back trucker with embroidered East Pass logo.",
     description:
-      "A classic mid-profile trucker with a breathable mesh back and a structured front panel that holds embroidery crisp. Snapback closure fits all. Personalize with your boat name or initials.",
+      "A classic mid-profile trucker with a breathable mesh back and a structured front panel. Embroidered with the East Pass Outfitters logo. Snapback closure fits all.",
     image: "/img/prod-hat.png",
     sizes: JSON.stringify(["OS"]),
     colors: JSON.stringify(["Teal / White", "Navy / Sand", "All Sand"]),
-    tags: JSON.stringify(["Embroidered", "Mesh Back", "Custom"]),
+    tags: JSON.stringify(["Embroidered", "Mesh Back", "Logo"]),
     rating: 4.8,
     reviewCount: 98,
     inStock: true,
@@ -91,7 +91,7 @@ export const seedProducts: InsertProduct[] = [
     image: "/img/prod-hoodie.png",
     sizes: APPAREL_SIZES,
     colors: JSON.stringify(["Seafoam", "Gulf White", "Deep Navy"]),
-    tags: JSON.stringify(["UPF 50+", "Hooded", "Custom"]),
+    tags: JSON.stringify(["UPF 50+", "Hooded", "Original Design"]),
     rating: 4.9,
     reviewCount: 76,
     inStock: true,
@@ -133,7 +133,7 @@ export const seedProducts: InsertProduct[] = [
     image: "/img/prod-gaiter.png",
     sizes: JSON.stringify(["OS"]),
     colors: JSON.stringify(["Teal Camo", "Open Water", "Sand Camo"]),
-    tags: JSON.stringify(["UPF 40+", "Multi-Wear", "Custom"]),
+    tags: JSON.stringify(["UPF 40+", "Multi-Wear", "Original Design"]),
     rating: 4.7,
     reviewCount: 61,
     inStock: true,

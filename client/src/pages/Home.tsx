@@ -33,7 +33,7 @@ export default function Home() {
             Gear up for what you're chasing.
           </h1>
           <p className="mt-5 max-w-xl text-base text-white/85 sm:text-lg">
-            Custom fishing and boating apparel, plus saltwater tackle organized
+            Original fishing and boating apparel, plus saltwater tackle organized
             by target species. From the flats to the bluewater, we've got the
             Emerald Coast covered.
           </p>
@@ -50,7 +50,7 @@ export default function Home() {
                 className="border-white/40 bg-white/10 text-base text-white backdrop-blur-sm hover:bg-white/20"
                 data-testid="button-hero-apparel"
               >
-                <Shirt className="mr-2 h-5 w-5" /> Custom Apparel
+                <Shirt className="mr-2 h-5 w-5" /> Shop Apparel
               </Button>
             </Link>
           </div>
@@ -61,7 +61,7 @@ export default function Home() {
       <section className="border-b border-border bg-sidebar">
         <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 px-4 py-6 sm:px-6 md:grid-cols-4">
           {[
-            { icon: Sparkles, title: "Custom printed", text: "Apparel decorated on the Emerald Coast" },
+            { icon: Sparkles, title: "Original designs", text: "Apparel designed on the Emerald Coast" },
             { icon: Fish, title: "Shop by species", text: "Tackle sorted by what you target" },
             { icon: Truck, title: "Free shipping", text: "On every order over $75" },
             { icon: Anchor, title: "Locally run", text: "Anglers serving anglers" },
@@ -125,19 +125,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CUSTOM APPAREL BANNER */}
+      {/* APPAREL BANNER */}
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-2xl border border-card-border">
-          <img src="/img/apparel-hero.png" alt="Custom Emerald Coast apparel" className="h-full w-full object-cover" />
+          <img src="/img/apparel-hero.png" alt="East Pass Emerald Coast apparel" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(198_55%_8%/0.85)] to-transparent" />
           <div className="absolute inset-0 flex flex-col justify-center p-8 sm:p-12">
-            <p className="text-xs font-700 uppercase tracking-[0.2em] text-white/80">Custom apparel</p>
+            <p className="text-xs font-700 uppercase tracking-[0.2em] text-white/80">East Pass apparel</p>
             <h2 className="mt-2 max-w-md font-display text-2xl font-700 text-white sm:text-3xl">
-              Your boat name. Your colors. Our quality.
+              Original designs. Built for the water.
             </h2>
             <p className="mt-3 max-w-md text-sm text-white/85">
-              UPF 50+ performance shirts, hats, and hoodies decorated in-house.
-              Outfit your crew, your charter, or your tournament team.
+              UPF 50+ performance shirts, hats, and hoodies designed on the
+              Emerald Coast — ready to wear from the flats to the dock bar.
             </p>
             <Link href="/apparel" className="mt-6">
               <Button size="lg" data-testid="button-banner-apparel">

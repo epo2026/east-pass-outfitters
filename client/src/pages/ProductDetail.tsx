@@ -6,7 +6,6 @@ import { useCart } from "@/lib/cart";
 import { formatPrice, productColors, productSizes, productTags, SPECIES_META, type Species } from "@/lib/catalog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Star, Truck, Shield, Sparkles, Check, ChevronRight, ShoppingBag } from "lucide-react";
 import NotFound from "@/pages/not-found";
@@ -24,7 +23,6 @@ export default function ProductDetail() {
 
   const [size, setSize] = useState<string | undefined>();
   const [color, setColor] = useState<string | undefined>();
-  const [customText, setCustomText] = useState("");
   const [added, setAdded] = useState(false);
 
   if (isLoading) {
@@ -54,13 +52,10 @@ export default function ProductDetail() {
 
   const handleAdd = () => {
     if (!canAdd) return;
-    const finalName = customText.trim()
-      ? `${product.name} — "${customText.trim()}"`
-      : product.name;
     addItem({
       productId: product.id,
       slug: product.slug,
-      name: finalName,
+      name: product.name,
       price: product.price,
       qty: 1,
       size: size ?? sizes[0],
@@ -101,7 +96,6 @@ export default function ProductDetail() {
           <img src={product.image} alt={product.name} className="aspect-square w-full object-cover" />
           <div className="absolute left-4 top-4 flex flex-col gap-1.5">
             {product.bestseller && <Badge className="border-0 bg-primary text-primary-foreground">Bestseller</Badge>}
-            {product.isDropship && <Badge variant="secondary" className="border-0">Ships from supplier</Badge>}
           </div>
         </div>
 
@@ -182,26 +176,6 @@ export default function ProductDetail() {
                   </button>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* Custom text */}
-          {product.isCustom && (
-            <div className="mt-6 rounded-lg border border-border bg-accent/40 p-4">
-              <p className="flex items-center gap-1.5 text-sm font-600">
-                <Sparkles className="h-4 w-4 text-primary" /> Personalize it (optional)
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Add your boat name, charter, or initials. We'll print or embroider it for you.
-              </p>
-              <Input
-                value={customText}
-                onChange={(e) => setCustomText(e.target.value)}
-                maxLength={30}
-                placeholder="e.g. Reel Therapy"
-                className="mt-3 bg-background"
-                data-testid="input-custom-text"
-              />
             </div>
           )}
 

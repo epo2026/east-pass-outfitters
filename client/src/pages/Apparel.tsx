@@ -11,9 +11,9 @@ export default function Apparel() {
 
   return (
     <ShopLayout
-      eyebrow="Custom & ready-to-wear"
+      eyebrow="Original designs"
       title="Emerald Coast Apparel"
-      description="UPF 50+ performance shirts, hats, hoodies, and more — decorated in-house. Add your boat name, charter, or tournament logo to make it yours."
+      description="UPF 50+ performance shirts, hats, hoodies, and more — our own Emerald Coast designs, built for long days on the water."
       bannerImage="/img/apparel-hero.png"
       products={apparel}
       isLoading={isLoading}

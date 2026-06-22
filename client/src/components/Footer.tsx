@@ -14,7 +14,7 @@ export function Footer() {
             <Logo />
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            Custom apparel and saltwater tackle for the Emerald Coast. Shop by what
+            Original apparel and saltwater tackle for the Emerald Coast. Shop by what
             you're chasing.
           </p>
           <p className="mt-4 flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -49,7 +49,7 @@ export function Footer() {
             <li><Link href="/apparel" className="text-foreground/80 hover:text-primary transition-colors">All Apparel</Link></li>
             <li><Link href="/apparel" className="text-foreground/80 hover:text-primary transition-colors">Sun Shirts</Link></li>
             <li><Link href="/apparel" className="text-foreground/80 hover:text-primary transition-colors">Hats</Link></li>
-            <li><Link href="/about" className="text-foreground/80 hover:text-primary transition-colors">Custom Orders</Link></li>
+            <li><Link href="/apparel" className="text-foreground/80 hover:text-primary transition-colors">Outerwear</Link></li>
           </ul>
         </div>
 

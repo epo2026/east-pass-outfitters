@@ -42,9 +42,6 @@ export function ProductCard({ product }: { product: Product }) {
             {product.bestseller && (
               <Badge className="bg-primary text-primary-foreground border-0">Bestseller</Badge>
             )}
-            {product.isCustom && (
-              <Badge variant="secondary" className="border-0">Customizable</Badge>
-            )}
             {product.compareAtPrice && (
               <Badge className="border-0 bg-destructive text-destructive-foreground">Sale</Badge>
             )}

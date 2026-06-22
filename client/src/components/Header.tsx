@@ -62,7 +62,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
       {/* Announcement bar */}
       <div className="bg-primary text-primary-foreground text-center text-xs font-500 py-1.5 px-4">
-        Free shipping on orders over $75 · Custom apparel printed on the Emerald Coast
+        Free shipping on orders over $75 · Original apparel designed on the Emerald Coast
       </div>
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="text-foreground" data-testid="link-home">

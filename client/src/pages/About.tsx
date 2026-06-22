@@ -33,10 +33,10 @@ export default function About() {
             wear apparel that holds up to sun, salt, and long runs offshore.
           </p>
           <p>
-            Every shirt and hat is decorated right here on the coast, so you can put
-            your boat name, charter, or tournament team on quality performance gear.
-            Our tackle is hand-picked and drop-shipped fast, so you spend less time
-            waiting and more time fishing.
+            Our apparel is designed right here on the coast — original artwork on
+            quality performance gear built to hold up to sun, salt, and long runs
+            offshore. Our tackle is hand-picked by people who fish these waters and
+            shipped out fast, so you spend less time waiting and more time fishing.
           </p>
         </div>
       </section>
@@ -46,8 +46,8 @@ export default function About() {
         <div className="mx-auto grid max-w-[1200px] gap-6 px-4 py-14 sm:px-6 md:grid-cols-4">
           {[
             { icon: Fish, title: "Sorted by species", text: "Find tackle by what you target, not by guessing brands." },
-            { icon: Sparkles, title: "Custom, in-house", text: "Apparel printed and embroidered on the Emerald Coast." },
-            { icon: Truck, title: "Fast shipping", text: "Drop-shipped tackle and free shipping over $75." },
+            { icon: Sparkles, title: "Original designs", text: "Apparel designed and printed on the Emerald Coast." },
+            { icon: Truck, title: "Fast shipping", text: "Quick fulfillment and free shipping over $75." },
             { icon: Anchor, title: "Locally rooted", text: "Built by people who fish these waters every week." },
           ].map((v) => (
             <div key={v.title} className="flex flex-col gap-2">
@@ -65,11 +65,11 @@ export default function About() {
       <section className="mx-auto max-w-[1200px] px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-700">Ready to gear up?</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-          Shop tackle by species or design custom apparel for your crew.
+          Shop tackle by species or grab our latest Emerald Coast apparel.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link href="/tackle"><Button size="lg"><Fish className="mr-2 h-5 w-5" /> Shop Tackle</Button></Link>
-          <Link href="/apparel"><Button size="lg" variant="outline"><Shirt className="mr-2 h-5 w-5" /> Custom Apparel <ArrowRight className="ml-2 h-4 w-4" /></Button></Link>
+          <Link href="/apparel"><Button size="lg" variant="outline"><Shirt className="mr-2 h-5 w-5" /> Shop Apparel <ArrowRight className="ml-2 h-4 w-4" /></Button></Link>
         </div>
       </section>
     </div>
