@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRoute, Link, useLocation } from "wouter";
+import { track } from "@/lib/track";
 import { useQuery } from "@tanstack/react-query";
 import type { Product } from "@shared/schema";
 import { useCart } from "@/lib/cart";
@@ -8,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Star, Truck, Shield, Sparkles, Check, ChevronRight, ShoppingBag } from "lucide-react";
+import { assetUrl } from "@/lib/utils";
 import NotFound from "@/pages/not-found";
 
 export default function ProductDetail() {
@@ -24,6 +26,13 @@ export default function ProductDetail() {
   const [size, setSize] = useState<string | undefined>();
   const [color, setColor] = useState<string | undefined>();
   const [added, setAdded] = useState(false);
+
+  // Track a product view once the product has loaded.
+  useEffect(() => {
+    if (product) {
+      track("product_view", { productId: product.id, path: `/product/${product.slug}` });
+    }
+  }, [product]);
 
   if (isLoading) {
     return (
@@ -93,7 +102,7 @@ export default function ProductDetail() {
       <div className="grid gap-10 md:grid-cols-2">
         {/* Image */}
         <div className="relative overflow-hidden rounded-xl border border-card-border bg-muted">
-          <img src={product.image} alt={product.name} className="aspect-square w-full object-cover" />
+          <img src={assetUrl(product.image)} alt={product.name} className="aspect-square w-full object-cover" />
           <div className="absolute left-4 top-4 flex flex-col gap-1.5">
             {product.bestseller && <Badge className="border-0 bg-primary text-primary-foreground">Bestseller</Badge>}
           </div>

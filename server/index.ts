@@ -4,6 +4,7 @@ import type { Request } from 'express';
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "node:http";
+import { ensureSeed } from "./storage";
 
 const app = express();
 const httpServer = createServer(app);
@@ -85,6 +86,13 @@ app.use((req, res, next) => {
   } else {
     const { setupVite } = await import("./vite");
     await setupVite(httpServer, app);
+  }
+
+  // Seed the database on startup (no-op if already seeded).
+  try {
+    await ensureSeed();
+  } catch (err) {
+    console.error("ensureSeed failed:", err);
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT

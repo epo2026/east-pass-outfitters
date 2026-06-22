@@ -1,6 +1,7 @@
 import { useLocation } from "wouter";
 import { useCart, lineKey } from "@/lib/cart";
 import { formatPrice } from "@/lib/catalog";
+import { assetUrl } from "@/lib/utils";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -69,7 +70,7 @@ export function CartDrawer() {
                   return (
                     <li key={key} className="flex gap-3" data-testid={`cart-item-${item.productId}`}>
                       <img
-                        src={item.image}
+                        src={assetUrl(item.image)}
                         alt={item.name}
                         className="h-20 w-20 shrink-0 rounded-md border border-card-border object-cover"
                       />

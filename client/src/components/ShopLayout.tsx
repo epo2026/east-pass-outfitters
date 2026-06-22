@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import type { Product } from "@shared/schema";
 import { ProductCard } from "./ProductCard";
+import { assetUrl } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +24,10 @@ interface ShopLayoutProps {
   facets?: { key: string; label: string }[];
   /** returns true if product is in this facet */
   facetMatch?: (p: Product, key: string) => boolean;
+  /** optional content rendered between the banner and the product controls */
+  children?: React.ReactNode;
+  /** optional breadcrumb rendered above the banner */
+  breadcrumb?: React.ReactNode;
 }
 
 type SortKey = "featured" | "price-asc" | "price-desc" | "rating";
@@ -36,6 +41,8 @@ export function ShopLayout({
   isLoading,
   facets,
   facetMatch,
+  children,
+  breadcrumb,
 }: ShopLayoutProps) {
   const [activeFacet, setActiveFacet] = useState<string>("all");
   const [sort, setSort] = useState<SortKey>("featured");
@@ -64,10 +71,11 @@ export function ShopLayout({
 
   return (
     <div>
+      {breadcrumb}
       {/* Banner */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0">
-          <img src={bannerImage} alt={title} className="h-full w-full object-cover" />
+          <img src={assetUrl(bannerImage)} alt={title} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(198_55%_8%/0.88)] via-[hsl(198_55%_10%/0.6)] to-[hsl(198_55%_10%/0.3)]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 py-14 sm:px-6 sm:py-16">
@@ -78,6 +86,8 @@ export function ShopLayout({
           <p className="mt-3 max-w-xl text-sm text-white/85 sm:text-base">{description}</p>
         </div>
       </section>
+
+      {children}
 
       <div className="mx-auto max-w-[1200px] px-4 py-8 sm:px-6">
         {/* Controls */}

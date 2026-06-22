@@ -1,0 +1,55 @@
+# Render Blueprint for East Pass Outfitters
+# Docs: https://render.com/docs/blueprint-spec
+#
+# This provisions a single always-on Node web service. The Postgres database
+# is NOT defined here on purpose — we use Neon (external) for Postgres, and you
+# paste its pooled connection string into the DATABASE_URL env var below.
+#
+# After connecting your GitHub repo, Render reads this file automatically.
+
+services:
+  - type: web
+    name: east-pass-outfitters
+    runtime: node
+    plan: starter            # ~$7/mo, always-on (no cold starts). Use "free" only to test.
+    region: ohio             # pick the region closest to your Neon DB region
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/config
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      # Render injects PORT automatically; the server reads process.env.PORT.
+
+      # --- Database (Neon Postgres) ---
+      # Paste your Neon POOLED connection string (ends in -pooler... ?sslmode=require)
+      - key: DATABASE_URL
+        sync: false
+
+      # --- Admin login ---
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+
+      # --- Public base URL (used for Stripe redirects + emails) ---
+      - key: PUBLIC_URL
+        value: https://www.eastpassoutfitters.com
+
+      # --- Stripe (payments) — leave unset to use the built-in demo checkout ---
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_AUTOMATIC_TAX
+        value: "false"
+
+      # --- Email (Resend) — optional, order confirmation emails ---
+      - key: RESEND_API_KEY
+        sync: false
+      - key: ORDER_FROM_EMAIL
+        value: East Pass Outfitters <orders@eastpassoutfitters.com>

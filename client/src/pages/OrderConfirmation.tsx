@@ -2,6 +2,7 @@ import { useRoute, Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import type { Order } from "@shared/schema";
 import { formatPrice, parseJsonArray } from "@/lib/catalog";
+import { assetUrl } from "@/lib/utils";
 import type { CartItem } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -50,7 +51,7 @@ export default function OrderConfirmation() {
         <ul className="flex flex-col gap-4" role="list">
           {items.map((i, idx) => (
             <li key={idx} className="flex gap-3">
-              <img src={i.image} alt={i.name} className="h-16 w-16 rounded-md border border-card-border object-cover" />
+              <img src={assetUrl(i.image)} alt={i.name} className="h-16 w-16 rounded-md border border-card-border object-cover" />
               <div className="flex-1">
                 <p className="text-sm font-600">{i.name}</p>
                 {(i.size || i.color) && (

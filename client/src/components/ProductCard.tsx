@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import type { Product } from "@shared/schema";
 import { formatPrice, productColors, productSizes } from "@/lib/catalog";
+import { assetUrl } from "@/lib/utils";
 import { useCart } from "@/lib/cart";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -33,7 +34,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-card-border bg-card hover-elevate">
         <div className="relative aspect-[4/5] overflow-hidden bg-muted">
           <img
-            src={product.image}
+            src={assetUrl(product.image)}
             alt={product.name}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

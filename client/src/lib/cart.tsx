@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useCallback, useMemo, type ReactNode } from "react";
 import type { CartItem } from "@shared/schema";
+import { track } from "@/lib/track";
 
 interface CartContextValue {
   items: CartItem[];
@@ -25,6 +26,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [isOpen, setOpen] = useState(false);
 
   const addItem = useCallback((item: CartItem) => {
+    track("add_to_cart", { productId: item.productId, value: item.price * item.qty });
     setItems((prev) => {
       const key = lineKey(item);
       const existing = prev.find((i) => lineKey(i) === key);

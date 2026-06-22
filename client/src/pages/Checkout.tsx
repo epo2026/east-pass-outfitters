@@ -1,11 +1,14 @@
+import { useEffect } from "react";
 import { useLocation, Link } from "wouter";
 import { useForm } from "react-hook-form";
+import { track } from "@/lib/track";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useCart, lineKey } from "@/lib/cart";
 import { formatPrice } from "@/lib/catalog";
+import { assetUrl } from "@/lib/utils";
 import type { Order } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -40,6 +43,19 @@ export default function Checkout() {
   const tax = +(subtotal * 0.07).toFixed(2);
   const total = +(subtotal + shipping + tax).toFixed(2);
 
+  // Track that the visitor reached checkout with items in cart (once).
+  useEffect(() => {
+    if (items.length > 0) {
+      track("begin_checkout", { value: total });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const { data: config } = useQuery<{ stripeEnabled: boolean }>({
+    queryKey: ["/api/config"],
+  });
+  const stripeEnabled = config?.stripeEnabled ?? false;
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,12 +69,16 @@ export default function Checkout() {
     },
   });
 
-  const checkout = useMutation({
+  // Demo path: creates a paid order immediately and shows confirmation.
+  const demoCheckout = useMutation({
     mutationFn: async (values: FormValues) => {
       const res = await apiRequest("POST", "/api/checkout", { ...values, items });
       return (await res.json()) as Order;
     },
     onSuccess: (order) => {
+      // Demo orders are paid immediately, so record the purchase here. (The
+      // Stripe path records purchases server-side via the verified webhook.)
+      track("purchase", { value: order.total });
       clear();
       navigate(`/order/${order.orderNumber}`);
     },
@@ -70,6 +90,32 @@ export default function Checkout() {
       });
     },
   });
+
+  // Production path: creates a pending order and redirects to Stripe Checkout.
+  // The cart is cleared on redirect; fulfillment happens via webhook.
+  const stripeCheckout = useMutation({
+    mutationFn: async (values: FormValues) => {
+      const res = await apiRequest("POST", "/api/checkout/session", { ...values, items });
+      return (await res.json()) as { url: string; orderNumber: string };
+    },
+    onSuccess: ({ url }) => {
+      clear();
+      window.location.href = url;
+    },
+    onError: () => {
+      toast({
+        title: "Couldn't start checkout",
+        description: "We couldn't reach the payment processor. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const checkout = stripeEnabled ? stripeCheckout : demoCheckout;
+  const submitCheckout = (v: FormValues) => {
+    if (stripeEnabled) stripeCheckout.mutate(v);
+    else demoCheckout.mutate(v);
+  };
 
   if (items.length === 0 && !checkout.isPending) {
     return (
@@ -95,7 +141,7 @@ export default function Checkout() {
         {/* Form */}
         <div>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit((v) => checkout.mutate(v))} className="space-y-6">
+            <form onSubmit={form.handleSubmit(submitCheckout)} className="space-y-6">
               <section>
                 <h2 className="mb-3 text-sm font-700 uppercase tracking-wider text-muted-foreground">Contact</h2>
                 <FormField
@@ -143,14 +189,23 @@ export default function Checkout() {
 
               <section>
                 <h2 className="mb-3 text-sm font-700 uppercase tracking-wider text-muted-foreground">Payment</h2>
-                <div className="rounded-lg border border-dashed border-border bg-muted/40 p-4 text-sm text-muted-foreground">
-                  <p className="flex items-center gap-1.5 font-600 text-foreground"><Lock className="h-4 w-4" /> Demo checkout</p>
-                  <p className="mt-1">This is a demo store — no payment is collected and no card is charged. Placing the order shows the full confirmation flow.</p>
-                </div>
+                {stripeEnabled ? (
+                  <div className="rounded-lg border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
+                    <p className="flex items-center gap-1.5 font-600 text-foreground"><Lock className="h-4 w-4" /> Secure payment by Stripe</p>
+                    <p className="mt-1">You'll be redirected to Stripe's secure, encrypted checkout to enter your card. We never see or store your card details.</p>
+                  </div>
+                ) : (
+                  <div className="rounded-lg border border-dashed border-border bg-muted/40 p-4 text-sm text-muted-foreground">
+                    <p className="flex items-center gap-1.5 font-600 text-foreground"><Lock className="h-4 w-4" /> Demo checkout</p>
+                    <p className="mt-1">This is a demo store — no payment is collected and no card is charged. Placing the order shows the full confirmation flow.</p>
+                  </div>
+                )}
               </section>
 
               <Button type="submit" size="lg" className="w-full text-base" disabled={checkout.isPending} data-testid="button-place-order">
-                {checkout.isPending ? "Placing order…" : `Place order · ${formatPrice(total)}`}
+                {checkout.isPending
+                  ? stripeEnabled ? "Redirecting to payment…" : "Placing order…"
+                  : stripeEnabled ? `Pay ${formatPrice(total)}` : `Place order · ${formatPrice(total)}`}
               </Button>
             </form>
           </Form>
@@ -163,7 +218,7 @@ export default function Checkout() {
             {items.map((i) => (
               <li key={lineKey(i)} className="flex gap-3">
                 <div className="relative">
-                  <img src={i.image} alt={i.name} className="h-14 w-14 rounded-md border border-card-border object-cover" />
+                  <img src={assetUrl(i.image)} alt={i.name} className="h-14 w-14 rounded-md border border-card-border object-cover" />
                   <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[0.65rem] font-700 text-primary-foreground">{i.qty}</span>
                 </div>
                 <div className="flex flex-1 flex-col">
