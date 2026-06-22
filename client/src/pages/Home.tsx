@@ -40,7 +40,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/tackle">
               <Button size="lg" className="text-base" data-testid="button-hero-tackle">
-                <Fish className="mr-2 h-5 w-5" /> Shop by Species
+                <Fish className="mr-2 h-5 w-5" /> Shop Tackle
               </Button>
             </Link>
             <Link href="/apparel">
