@@ -16,7 +16,7 @@ export default function Tackle() {
       eyebrow="Shop by target species"
       title="The Tackle Shop"
       description="Lures, rigs, and terminal tackle sorted by what you're chasing — from grass-flat redfish to bluewater snapper. Hand-picked by anglers who fish the Emerald Coast."
-      bannerImage="/img/tackle-flatlay.png"
+      bannerImage="/img/tackle-flatlay.webp"
       products={tackle}
       isLoading={isLoading}
       facets={facets}

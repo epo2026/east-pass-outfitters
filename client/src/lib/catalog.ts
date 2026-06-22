@@ -10,25 +10,25 @@ export const SPECIES_META: Record<
     label: "Inshore",
     tagline: "Flats, bays & oyster bars",
     species: "Redfish · Trout · Flounder · Snook",
-    image: "/img/cat-inshore.png",
+    image: "/img/cat-inshore.webp",
   },
   offshore: {
     label: "Offshore",
     tagline: "Wrecks, ledges & bluewater",
     species: "Snapper · Grouper · Mahi · Tuna",
-    image: "/img/cat-offshore.png",
+    image: "/img/cat-offshore.webp",
   },
   pelagic: {
     label: "Pelagic",
     tagline: "Trolling & nearshore runs",
     species: "King Mackerel · Cobia · Sailfish",
-    image: "/img/cat-pelagic.png",
+    image: "/img/cat-pelagic.webp",
   },
   piersurf: {
     label: "Pier & Surf",
     tagline: "Beaches, piers & the wash",
     species: "Pompano · Whiting · Spanish · Reds",
-    image: "/img/cat-piersurf.png",
+    image: "/img/cat-piersurf.webp",
   },
 };
 

@@ -46,7 +46,7 @@ export default function Blog() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border">
         <img
-          src={assetUrl("/img/cat-inshore.png")}
+          src={assetUrl("/img/cat-inshore.webp")}
           alt="Fishing the Emerald Coast"
           className="absolute inset-0 h-full w-full object-cover"
         />

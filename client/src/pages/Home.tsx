@@ -35,7 +35,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={assetUrl("/img/hero.png")}
+            src={assetUrl("/img/hero.webp")}
             alt="East Pass inlet at Destin, Florida"
             className="h-full w-full object-cover"
           />
@@ -120,7 +120,7 @@ export default function Home() {
           {[
             {
               href: "/tackle",
-              img: "/img/tackle-flatlay.png",
+              img: "/img/tackle-flatlay.webp",
               eyebrow: "Shop Tackle",
               title: "By target species",
               text: "Rigs, lures, and terminal tackle sorted by what you're chasing.",
@@ -129,7 +129,7 @@ export default function Home() {
             },
             {
               href: "/apparel",
-              img: "/img/apparel-hero.png",
+              img: "/img/apparel-hero.webp",
               eyebrow: "Shop Apparel",
               title: "Original designs",
               text: "UPF 50+ shirts, hats, and hoodies designed on the Emerald Coast.",
@@ -138,7 +138,7 @@ export default function Home() {
             },
             {
               href: "/charter",
-              img: "/img/charter-hero.png",
+              img: "/img/charter-hero.webp",
               eyebrow: "Book a Charter",
               title: "Get on the water",
               text: "Inshore, nearshore, and offshore trips with local captains.",
@@ -219,7 +219,7 @@ export default function Home() {
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="relative h-[360px] overflow-hidden rounded-2xl border border-card-border sm:h-[400px]">
           <img
-            src={assetUrl("/img/apparel-hero.png")}
+            src={assetUrl("/img/apparel-hero.webp")}
             alt="East Pass Emerald Coast apparel"
             className="absolute inset-0 h-full w-full object-cover"
           />

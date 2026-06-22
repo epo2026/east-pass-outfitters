@@ -2,12 +2,12 @@ import type { InsertProduct } from "@shared/schema";
 
 // Image paths resolve from client/public
 const IMG = {
-  apparel: "/img/apparel-hero.png",
-  tackle: "/img/tackle-flatlay.png",
-  inshore: "/img/cat-inshore.png",
-  offshore: "/img/cat-offshore.png",
-  pelagic: "/img/cat-pelagic.png",
-  piersurf: "/img/cat-piersurf.png",
+  apparel: "/img/apparel-hero.webp",
+  tackle: "/img/tackle-flatlay.webp",
+  inshore: "/img/cat-inshore.webp",
+  offshore: "/img/cat-offshore.webp",
+  pelagic: "/img/cat-pelagic.webp",
+  piersurf: "/img/cat-piersurf.webp",
 };
 
 const APPAREL_SIZES = JSON.stringify(["S", "M", "L", "XL", "2XL", "3XL"]);
@@ -25,7 +25,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Our flagship moisture-wicking UPF 50+ sun shirt.",
     description:
       "Our flagship sun shirt. Lightweight 4-way-stretch performance knit with UPF 50+ sun protection, a quick-dry finish, and flatlock seams that won't chafe on long days on the water. Designed on the Emerald Coast with original East Pass artwork.",
-    image: "/img/prod-ls-shirt.png",
+    image: "/img/prod-ls-shirt.webp",
     sizes: APPAREL_SIZES,
     colors: JSON.stringify(["Seafoam", "Gulf White", "Deep Navy", "Sand"]),
     tags: JSON.stringify(["UPF 50+", "Performance", "Original Design"]),
@@ -46,7 +46,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Soft tri-blend everyday tee with Emerald Coast artwork.",
     description:
       "An ultra-soft tri-blend tee built for the dock, the deck, and everywhere in between. Screen-printed with original Emerald Coast artwork. Pre-shrunk and tagless for all-day comfort.",
-    image: "/img/prod-tee.png",
+    image: "/img/prod-tee.webp",
     sizes: APPAREL_SIZES,
     colors: JSON.stringify(["Heather Teal", "Faded Sand", "Charcoal"]),
     tags: JSON.stringify(["Tri-Blend", "Everyday", "Original Design"]),
@@ -67,7 +67,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Mid-profile mesh-back trucker with embroidered East Pass logo.",
     description:
       "A classic mid-profile trucker with a breathable mesh back and a structured front panel. Embroidered with the East Pass Outfitters logo. Snapback closure fits all.",
-    image: "/img/prod-hat.png",
+    image: "/img/prod-hat.webp",
     sizes: JSON.stringify(["OS"]),
     colors: JSON.stringify(["Teal / White", "Navy / Sand", "All Sand"]),
     tags: JSON.stringify(["Embroidered", "Mesh Back", "Logo"]),
@@ -88,7 +88,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Hooded UPF 50+ layer with thumbholes and gaiter hood.",
     description:
       "When the run offshore turns cool, the Gulf Breeze hoodie has your back. UPF 50+ hooded sun protection with built-in thumbholes and a face-shielding gaiter hood. Light enough for July, warm enough for a January cobia run.",
-    image: "/img/prod-hoodie.png",
+    image: "/img/prod-hoodie.webp",
     sizes: APPAREL_SIZES,
     colors: JSON.stringify(["Seafoam", "Gulf White", "Deep Navy"]),
     tags: JSON.stringify(["UPF 50+", "Hooded", "Original Design"]),
@@ -109,7 +109,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Quick-dry stretch shorts that swim, fish, and grill.",
     description:
       "Hybrid shorts that go from the water to the dock bar without missing a beat. 4-way stretch, quick-dry fabric, zippered back pocket, and a comfort waistband. 8-inch inseam.",
-    image: "/img/prod-shorts.png",
+    image: "/img/prod-shorts.webp",
     sizes: JSON.stringify(["28", "30", "32", "34", "36", "38"]),
     colors: JSON.stringify(["Gulf Navy", "Sand", "Olive"]),
     tags: JSON.stringify(["Quick-Dry", "Hybrid", "Stretch"]),
@@ -130,7 +130,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "UPF 40+ multi-wear face and neck sun shield.",
     description:
       "Tubular UPF 40+ sun protection for your face, neck, and ears. Wear it a dozen ways. Moisture-wicking and breathable, printed with Emerald Coast patterns.",
-    image: "/img/prod-gaiter.png",
+    image: "/img/prod-gaiter.webp",
     sizes: JSON.stringify(["OS"]),
     colors: JSON.stringify(["Teal Camo", "Open Water", "Sand Camo"]),
     tags: JSON.stringify(["UPF 40+", "Multi-Wear", "Original Design"]),
@@ -154,7 +154,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "10-pack of 4\" paddle tails in proven flats colors.",
     description:
       "The go-to soft plastic for redfish and trout on the flats. This 10-pack covers the colors that get bit around Destin and Choctawhatchee Bay \u2014 from new-penny gold to glow-chartreuse. Rig them weedless or on a jig head.",
-    image: "/img/prod-softplastic.png",
+    image: "/img/prod-softplastic.webp",
     sizes: null,
     colors: JSON.stringify(["New Penny", "Chicken on a Chain", "Glow Chartreuse"]),
     tags: JSON.stringify(["Soft Plastic", "Redfish", "Trout", "Flounder"]),
@@ -176,7 +176,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "1/8\u20131/4 oz needle-point jig heads for soft plastics.",
     description:
       "Sticky-sharp needle-point jig heads sized for inshore soft plastics. Assorted 1/8, 3/16, and 1/4 oz so you can match the depth and current. Black-nickel hooks resist saltwater corrosion.",
-    image: "/img/prod-jighead.png",
+    image: "/img/prod-jighead.webp",
     sizes: null,
     colors: JSON.stringify(["Unpainted", "Chartreuse", "Red"]),
     tags: JSON.stringify(["Jig Head", "Redfish", "Trout"]),
@@ -198,7 +198,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Classic walk-the-dog topwater for dawn trout blowups.",
     description:
       "Nothing beats a sunrise topwater bite. This walking plug spits and slides side-to-side to call up speckled trout and reds from grass flats and oyster bars. Saltwater-grade hardware and trebles.",
-    image: "/img/prod-topwater.png",
+    image: "/img/prod-topwater.webp",
     sizes: null,
     colors: JSON.stringify(["Bone", "Speckled Trout", "Mullet"]),
     tags: JSON.stringify(["Topwater", "Trout", "Redfish"]),
@@ -220,7 +220,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Pre-rigged titanium-wire popping corks that call fish in.",
     description:
       "Rattling popping corks on a titanium wire frame \u2014 pop it and it chugs and clacks like a feeding fish. Deadly for trout and reds over grass. Pre-rigged and ready to tie on a leader.",
-    image: "/img/prod-poppingcork.png",
+    image: "/img/prod-poppingcork.webp",
     sizes: null,
     colors: JSON.stringify(["Orange/Green", "Pink/Chartreuse"]),
     tags: JSON.stringify(["Popping Cork", "Trout", "Redfish"]),
@@ -244,7 +244,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Heavy-mono knocker rigs built for red snapper season.",
     description:
       "Hand-tied knocker rigs on 80 lb mono with forged circle hooks \u2014 the right setup for red snapper, mingo, and grouper over the wrecks and ledges. Pre-tied so you can re-rig fast when the bite is on.",
-    image: "/img/prod-bottomrig.png",
+    image: "/img/prod-bottomrig.webp",
     sizes: null,
     colors: JSON.stringify(["6/0", "8/0"]),
     tags: JSON.stringify(["Bottom Rig", "Red Snapper", "Grouper"]),
@@ -266,7 +266,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Forged inline circle hooks \u2014 federally compliant for reef fish.",
     description:
       "Non-offset inline circle hooks that meet Gulf reef-fish regulations and dramatically improve release survival. Forged, chemically sharpened, and corrosion-resistant. Sizes 5/0 through 9/0.",
-    image: "/img/prod-hooks.png",
+    image: "/img/prod-hooks.webp",
     sizes: null,
     colors: JSON.stringify(["5/0", "7/0", "9/0"]),
     tags: JSON.stringify(["Circle Hooks", "Red Snapper", "Grouper", "Regulation"]),
@@ -288,7 +288,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "8\u201316 oz sinkers to hold bottom in deep gulf current.",
     description:
       "When you're dropping on a deep ledge in current, you need weight. This assortment of 8, 12, and 16 oz bank sinkers keeps your bait pinned to the bottom where the snapper and grouper live.",
-    image: "/img/prod-banksinker.png",
+    image: "/img/prod-banksinker.webp",
     sizes: null,
     colors: JSON.stringify(["Assorted Weights"]),
     tags: JSON.stringify(["Sinkers", "Deep Drop", "Bottom Fishing"]),
@@ -310,7 +310,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Pre-rigged trolling skirts for mahi and the weed lines.",
     description:
       "Bright, color-pulsing trolling skirts pre-rigged to pull a ballyhoo along the weed lines and rips where the mahi school up. A spread of these behind the boat is hard for a dolphin to resist.",
-    image: "/img/prod-trollingskirt.png",
+    image: "/img/prod-trollingskirt.webp",
     sizes: null,
     colors: JSON.stringify(["Pink/White", "Blue/Silver", "Green/Chartreuse"]),
     tags: JSON.stringify(["Trolling", "Mahi", "Dolphin"]),
@@ -334,7 +334,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Twin-treble wire stinger rigs for short-striking kings.",
     description:
       "Smoker kings are notorious short-strikers \u2014 this twin-treble wire stinger rig puts a trailing hook right where they bite. Hand-built on coffee-colored single-strand wire with strong swivels for slow-trolling live bait.",
-    image: "/img/prod-stingerrig.png",
+    image: "/img/prod-stingerrig.webp",
     sizes: null,
     colors: JSON.stringify(["#4 Wire", "#5 Wire"]),
     tags: JSON.stringify(["Stinger Rig", "King Mackerel", "Live Bait"]),
@@ -356,7 +356,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Heavy bucktail jig for sight-casting spring cobia.",
     description:
       "When cobia cruise the surface in spring, you need a jig you can cast far and drop in their face. This 3 oz bucktail with a soft-plastic trailer is the Emerald Coast cobia standard. Bright colors they can't ignore.",
-    image: "/img/prod-bucktail.png",
+    image: "/img/prod-bucktail.webp",
     sizes: null,
     colors: JSON.stringify(["Chartreuse", "Pink", "White"]),
     tags: JSON.stringify(["Bucktail Jig", "Cobia", "Sight Casting"]),
@@ -378,7 +378,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Chugging popper for busting tuna and bonito schools.",
     description:
       "When tuna and bonito are crashing bait on the surface, throw a popper into the chaos. This chugger pushes water and calls fish from a distance, armed with heavy-duty saltwater trebles and split rings.",
-    image: "/img/prod-tunapopper.png",
+    image: "/img/prod-tunapopper.webp",
     sizes: null,
     colors: JSON.stringify(["Sardine", "Pilchard", "Pink Head"]),
     tags: JSON.stringify(["Popper", "Tuna", "Bonito"]),
@@ -400,7 +400,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Flashy trolling spoons for covering water fast.",
     description:
       "Pull these behind a planer or trolling weight to cover water and trigger reaction strikes from kings and Spanish mackerel. The wobble and flash mimic a fleeing baitfish. 3-pack of proven sizes.",
-    image: "/img/prod-spoon.png",
+    image: "/img/prod-spoon.webp",
     sizes: null,
     colors: JSON.stringify(["Silver", "Gold", "Chartreuse"]),
     tags: JSON.stringify(["Trolling Spoon", "King Mackerel", "Spanish"]),
@@ -424,7 +424,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Float-and-bead surf rigs that pompano can't pass up.",
     description:
       "The classic Gulf pompano rig \u2014 two dropper loops with floats and bright beads to lift sand fleas off the bottom in the wash. Hand-tied on abrasion-resistant mono with circle hooks. Add a pyramid sinker and you're fishing.",
-    image: "/img/prod-surfrig.png",
+    image: "/img/prod-surfrig.webp",
     sizes: null,
     colors: JSON.stringify(["Pink/Orange", "Chartreuse/Green"]),
     tags: JSON.stringify(["Surf Rig", "Pompano", "Beach"]),
@@ -446,7 +446,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "3\u20135 oz pyramid weights that anchor in the surf.",
     description:
       "Pyramid sinkers dig into the sand and hold your rig steady against the wash and longshore current. Assorted 3, 4, and 5 oz so you can match the surf conditions on any given morning.",
-    image: "/img/prod-pyramid.png",
+    image: "/img/prod-pyramid.webp",
     sizes: null,
     colors: JSON.stringify(["Assorted Weights"]),
     tags: JSON.stringify(["Sinkers", "Surf", "Pompano"]),
@@ -468,7 +468,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "The pier staple for fast Spanish mackerel action.",
     description:
       "Walk any Gulf pier and you'll see Gotcha plugs flying. This fast-retrieve plug with a red head and a chrome body is the standard for Spanish mackerel and bluefish off the rails. Tie direct to a short wire leader.",
-    image: "/img/prod-gotcha.png",
+    image: "/img/prod-gotcha.webp",
     sizes: null,
     colors: JSON.stringify(["Red/Chrome", "Pink/Pearl", "Chartreuse"]),
     tags: JSON.stringify(["Plug", "Spanish Mackerel", "Pier"]),
@@ -490,7 +490,7 @@ export const seedProducts: InsertProduct[] = [
     shortDescription: "Catch your own pompano bait right in the wash.",
     description:
       "The best pompano bait is free \u2014 you just have to rake it. This galvanized sand flea rake lets you scoop live sand fleas from the swash zone. Stainless basket and a comfortable handle. Free bait all season.",
-    image: "/img/prod-sandflearake.png",
+    image: "/img/prod-sandflearake.webp",
     sizes: null,
     colors: JSON.stringify(["Standard"]),
     tags: JSON.stringify(["Bait", "Pompano", "Surf Tool"]),

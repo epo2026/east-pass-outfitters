@@ -14,7 +14,7 @@ export default function Apparel() {
       eyebrow="Original designs"
       title="Emerald Coast Apparel"
       description="UPF 50+ performance shirts, hats, hoodies, and more — our own Emerald Coast designs, built for long days on the water."
-      bannerImage="/img/apparel-hero.png"
+      bannerImage="/img/apparel-hero.webp"
       products={apparel}
       isLoading={isLoading}
       facets={facets}

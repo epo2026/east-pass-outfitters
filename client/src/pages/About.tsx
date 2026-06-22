@@ -8,7 +8,7 @@ export default function About() {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border">
-        <img src={assetUrl("/img/hero.png")} alt="East Pass inlet" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={assetUrl("/img/hero.webp")} alt="East Pass inlet" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(198_55%_8%/0.9)] to-[hsl(198_55%_10%/0.4)]" />
         <div className="relative mx-auto max-w-[1200px] px-4 py-20 sm:px-6">
           <p className="text-xs font-700 uppercase tracking-[0.2em] text-white/80">Our story</p>

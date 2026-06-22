@@ -42,7 +42,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Where to find tailing reds in the bay and the simple presentations that get them to eat.",
     bestTime: "Fall through early winter, low incoming tide",
     readMinutes: 6,
-    image: "/img/cat-inshore.png",
+    image: "/img/cat-inshore.webp",
     sections: [
       {
         heading: "Where to look",
@@ -82,7 +82,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Dialing in depth, tide, and lure choice for a steady trout bite over turtle grass.",
     bestTime: "Spring and fall, first two hours of daylight",
     readMinutes: 5,
-    image: "/img/cat-inshore.png",
+    image: "/img/cat-inshore.webp",
     sections: [
       {
         heading: "Where to look",
@@ -120,7 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "How to work bottom structure and the fall run for doormat flounder around the inlets.",
     bestTime: "October fall run, last of the outgoing tide",
     readMinutes: 5,
-    image: "/img/cat-inshore.png",
+    image: "/img/cat-inshore.webp",
     sections: [
       {
         heading: "Where to look",
@@ -159,7 +159,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Finding live bottom, rigging for big sows, and getting bit when the reef is crowded.",
     bestTime: "Open-season summer days, slack tide windows",
     readMinutes: 7,
-    image: "/img/cat-offshore.png",
+    image: "/img/cat-offshore.webp",
     sections: [
       {
         heading: "Where to look",
@@ -197,7 +197,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "The heavy tackle and fast-cranking technique you need to keep a gag out of the rocks.",
     bestTime: "Cooler months as gags move shallower",
     readMinutes: 6,
-    image: "/img/cat-offshore.png",
+    image: "/img/cat-offshore.webp",
     sections: [
       {
         heading: "Where to look",
@@ -235,7 +235,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Running the bluewater, reading weed lines and rips, and keeping a school boatside.",
     bestTime: "Late spring through summer, blue water close to shore",
     readMinutes: 6,
-    image: "/img/cat-offshore.png",
+    image: "/img/cat-offshore.webp",
     sections: [
       {
         heading: "Where to look",
@@ -275,7 +275,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Stinger rigs, bait spreads, and the nearshore numbers that hold smoker kings.",
     bestTime: "Spring and fall migrations, nearshore",
     readMinutes: 6,
-    image: "/img/cat-pelagic.png",
+    image: "/img/cat-pelagic.webp",
     sections: [
       {
         heading: "Where to look",
@@ -313,7 +313,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Spotting cobia along the beach and making the cast count before they spook.",
     bestTime: "March through April, clear sunny days",
     readMinutes: 5,
-    image: "/img/cat-pelagic.png",
+    image: "/img/cat-pelagic.webp",
     sections: [
       {
         heading: "Where to look",
@@ -353,7 +353,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Reading the beach, finding the troughs, and rigging for the silver surfers of the wash.",
     bestTime: "Spring and fall, moving tide",
     readMinutes: 6,
-    image: "/img/cat-piersurf.png",
+    image: "/img/cat-piersurf.webp",
     sections: [
       {
         heading: "Where to look",
@@ -391,7 +391,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Fast retrieves, flashy lures, and timing the bait schools off the rails.",
     bestTime: "Warm months, early morning bait schools",
     readMinutes: 4,
-    image: "/img/cat-piersurf.png",
+    image: "/img/cat-piersurf.webp",
     sections: [
       {
         heading: "Where to look",

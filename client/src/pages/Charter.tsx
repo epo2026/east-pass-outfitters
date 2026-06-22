@@ -10,7 +10,7 @@ export default function Charter() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={assetUrl("/img/charter-hero.png")}
+            src={assetUrl("/img/charter-hero.webp")}
             alt="Center-console charter boat running the Emerald Coast"
             className="h-full w-full object-cover"
           />

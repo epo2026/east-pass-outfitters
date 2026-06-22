@@ -49,7 +49,7 @@ export const CHARTER_TRIPS: CharterTrip[] = [
     fromPrice: 450,
     target: "Redfish · Trout · Flounder",
     includes: ["Rods, reels & tackle", "Bait & ice", "FL fishing license", "Catch cleaning"],
-    image: "/img/cat-inshore.png",
+    image: "/img/cat-inshore.webp",
     bookingUrl: null,
   },
   {
@@ -65,7 +65,7 @@ export const CHARTER_TRIPS: CharterTrip[] = [
     fromPrice: 650,
     target: "Snapper · Spanish · King Mackerel",
     includes: ["All gear & tackle", "Bait & ice", "FL fishing license", "Catch cleaning"],
-    image: "/img/cat-pelagic.png",
+    image: "/img/cat-pelagic.webp",
     bookingUrl: null,
   },
   {
@@ -81,7 +81,7 @@ export const CHARTER_TRIPS: CharterTrip[] = [
     fromPrice: 1450,
     target: "Snapper · Grouper · Mahi · Tuna",
     includes: ["Premium offshore gear", "Bait, ice & drinks", "FL fishing license", "Catch cleaning"],
-    image: "/img/cat-offshore.png",
+    image: "/img/cat-offshore.webp",
     bookingUrl: null,
   },
   {
@@ -97,7 +97,7 @@ export const CHARTER_TRIPS: CharterTrip[] = [
     fromPrice: 350,
     target: "Pompano · Spanish Mackerel · Whiting",
     includes: ["Surf rods & rigs", "Bait & sand spikes", "FL fishing license", "On-the-beach coaching"],
-    image: "/img/cat-piersurf.png",
+    image: "/img/cat-piersurf.webp",
     bookingUrl: null,
   },
 ];

@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 // Resolve a static asset path against the Vite base URL so images load
 // correctly when the site is served from a subpath (e.g. proxied previews).
-// Leading-slash paths like "/img/hero.png" would otherwise resolve to the
+// Leading-slash paths like "/img/hero.webp" would otherwise resolve to the
 // domain root and 404. Leaves absolute (http) and data URLs untouched.
 export function assetUrl(src: string): string {
   if (!src || /^(https?:|data:|blob:)/.test(src)) return src;
